@@ -46,8 +46,7 @@ class TestCalculator:
                                          [2, 0, 0], [-0.1, -2, 0.05]],
                              ids=['int_small', 'int_big', 'float_num', 'zero_int', 'float_minus'])
     def test_div(self, a, b, c):
-        if b == 0:
-            print("除数不能为0")
-            assert False
-        else:
+        try:
             assert c == round(self.calculator.div(a, b), 2)
+        except ZeroDivisionError as f:
+            print("除数为0")
