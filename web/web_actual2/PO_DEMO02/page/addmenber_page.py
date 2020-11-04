@@ -38,7 +38,8 @@ class AddMenberPage(BassPage):
 
             if value in totallist:
                 return True
-            self.find(By.XPATH, '//*[@class="ww_commonImg ww_commonImg_PageNavArrowRightNormal"]').click()
+            else:
+                self.find(By.XPATH, '//*[@class="ww_commonImg ww_commonImg_PageNavArrowRightNormal"]').click()
 
             if int(num) == int(total):
                 return False
